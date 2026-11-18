@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080d18">
+<title>CASTROVPN</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #080d18;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.app {
+  width: 100%;
+  max-width: 430px;
+  padding: 35px 24px;
+  text-align: center;
+}
+
+.logo {
+  font-size: 34px;
+  font-weight: bold;
+  color: #39a9ff;
+  margin-top: 35px;
+}
+
+.subtitle {
+  color: #9ba9bd;
+  margin-top: 10px;
+}
+
+.status {
+  margin: 55px auto 20px;
+  color: #ffb84d;
+  font-size: 15px;
+}
+
+.circle {
+  width: 175px;
+  height: 175px;
+  border: 5px solid #263c59;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  font-size: 65px;
+  color: #39a9ff;
+  box-shadow: 0 0 35px #123b6444;
+}
+
+button {
+  width: 100%;
+  padding: 19px;
+  border: none;
+  border-radius: 14px;
+  background: #1688e8;
+  color: white;
+  font-size: 19px;
+  font-weight: bold;
+  margin-top: 40px;
+}
+
+.info {
+  background: #121d2d;
+  padding: 20px;
+  border-radius: 14px;
+  margin-top: 35px;
+  text-align: left;
+  color: #bdc9d9;
+  line-height: 2;
+}
+
+.footer {
+  margin-top: 45px;
+  color: #63758e;
+  font-size: 12px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+  <div class="logo">CASTROVPN</div>
+
+  <div class="subtitle">
+    Tu conexión. Tu privacidad.
+  </div>
+
+  <div class="status" id="status">
+    ● DESACTIVADO
+  </div>
+
+  <div class="circle">
+    ◉
+  </div>
+
+  <button onclick="connect()" id="connectBtn">
+    CONECTAR
+  </button>
+
+  <div class="info">
+    🌎 Servidor: Automático<br>
+    📶 Red: Disponible<br>
+    🔒 Protección: Pendiente de configurar
+  </div>
+
+  <div class="footer">
+    CASTROVPN © 2026<br>
+    Desarrollado por Castro
+  </div>
+
+</div>
+
+<script>
+let connected = false;
+
+function connect() {
+  connected = !connected;
+
+  document.getElementById("status").innerHTML =
+    connected ? "● DEMO ACTIVADA" : "● DESACTIVADO";
+
+  document.getElementById("connectBtn").innerHTML =
+    connected ? "DESCONECTAR" : "CONECTAR";
+
+  document.getElementById("status").style.color =
+    connected ? "#35d69a" : "#ffb84d";
+}
+</script>
+
+</body>
+</html>
